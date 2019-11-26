@@ -1,17 +1,30 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Item } from 'semantic-ui-react';
-import { PostCard, MyHeader } from '../components';
+import { PostCard, MyHeader, Loading } from '../components';
+import { useFetching } from '../hooks';
+import { loadPostsAction } from '../actions';
+import { ApplicationState, PostType } from '../types';
 
-const PostList = () => {
-    const data = [{ "id": 1, "title": "title1", "content": "content1" }, { "id": 2, "title": "title2", "content": "content2" }];
-    const posts = data.map((d) => <PostCard key={d.title} {...d} />);
+interface IProps {
+    posts: PostType[]
+}
+
+const PostListContainers: React.FC<IProps> = ({ posts }) => {
+    useFetching(loadPostsAction);
+    const postsItems = posts.map((post) => <PostCard key={post.id} {...post} />);
     return (
         <>
             <MyHeader />
-            <Item.Group divided>{posts}
+            <Item.Group divided>
+                {posts.length === 0 ? <Loading /> : postsItems}
             </Item.Group>
         </>
     )
 }
+
+const mapStateToProps = (state: ApplicationState) => state.posts;
+
+const PostList = connect(mapStateToProps)(PostListContainers);
 
 export { PostList };

@@ -1,3 +1,11 @@
+import {
+    LOAD_POSTS,
+    POSTS_LOADED,
+    LOAD_POST,
+    ADD_POST,
+    DELETE_POST,
+} from '../actions';
+
 export interface Category {
     name: string
 }
@@ -6,8 +14,8 @@ export interface PostType {
     id: number
     title: string
     content: string
-    // datePosted: Date
-    // categories: Category[]
+    datePosted: string
+    categories: Category[]
 }
 
 export interface PostState {
@@ -15,12 +23,9 @@ export interface PostState {
     loading: boolean
 }
 
-// actions
-export const LOAD_POSTS = 'LOAD_POSTS';
-export const LOAD_POST = 'LOAD_POST';
-export const POSTS_LOADED = 'POSTS_LOADED';
-export const ADD_POST = 'ADD_POST';
-export const DELETE_POST = 'DELETE_POST';
+export interface ApplicationState {
+    posts: PostState;
+}
 
 interface LoadPostsAction {
     type: typeof LOAD_POSTS
