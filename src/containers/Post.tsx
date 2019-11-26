@@ -1,10 +1,19 @@
 import React from 'react';
-import { PostCard } from '../components';
-import { PostType } from '../types';
+import {
+    useParams
+} from "react-router-dom";
+import { MyHeader } from '../components';
 
-const Post = (post: PostType) => {
+const Post = () => {
+    let { id } = useParams();
+
     return (
-        <PostCard  {...post} />
+        <>
+            <MyHeader />
+            <div>
+                {id}
+            </div>
+        </>
     )
 }
 

@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { Provider } from 'react-redux';
-import { Container } from 'semantic-ui-react'
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { Container } from 'semantic-ui-react';
 import { store } from './store';
-import { PostList } from './containers'
-import { MyHeader } from './components'
+import { withSuspense } from './HOC';
 
+// Using React.lazy to dynamic import component.
+const Post = lazy(() =>
+  import('./containers')
+    .then(({ Post }) => ({ default: Post })),
+);
+const PostList = lazy(() =>
+  import('./containers')
+    .then(({ PostList }) => ({ default: PostList })),
+);
+
+const Routes = () => {
+  return <BrowserRouter>
+    <Switch>
+      <Route exact path="/" component={withSuspense(PostList)} />
+      <Route path="/post/:id" component={withSuspense(Post)} />
+    </Switch>
+  </BrowserRouter>
+
+}
 const AppContainer = () => (
   <Container>
-    <MyHeader />
-    <PostList />
+    <Routes />
   </Container>
 )
 

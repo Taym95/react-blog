@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Icon, Item } from 'semantic-ui-react';
-
+import { MyLink } from './MyLink';
+import { MyHeader } from './MyHeader';
 import { PostType } from '../types';
 
 const PostCard = (post: PostType) => {
@@ -16,8 +17,7 @@ const PostCard = (post: PostType) => {
         </Item.Extra>
         <Item.Extra>
           <Button primary floated='right'>
-            Read more
-          <Icon name='angle right' />
+            <MyLink to="/post/10"> Read more <Icon name='angle right' /></MyLink>
           </Button>
         </Item.Extra>
       </Item.Content>

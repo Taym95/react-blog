@@ -1,2 +1,2 @@
 export { PostCard } from './PostCard';
-export { MyHeader } from './Myheader';
+export { MyHeader } from './MyHeader';
