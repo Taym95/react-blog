@@ -2,7 +2,7 @@ import { myAxios } from './api';
 import { PostType } from '../types';
 
 export const updatePost = async (post: PostType) => {
-  const response = await myAxios.put(`posts/`, post);
+  const response = await myAxios.put(`posts/${post.id}`, post);
   return response;
 };
 
