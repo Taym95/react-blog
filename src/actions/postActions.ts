@@ -1,6 +1,4 @@
-import {
-    PostType
-} from '../types';
+import { PostType } from '../types';
 
 // actions
 export const LOAD_POSTS = 'LOAD_POSTS';

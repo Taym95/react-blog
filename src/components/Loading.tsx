@@ -1,5 +1,5 @@
-import React from 'react'
-import { Placeholder } from 'semantic-ui-react'
+import React from 'react';
+import { Placeholder } from 'semantic-ui-react';
 
 const Loading = () => (
     <Placeholder>
@@ -16,6 +16,6 @@ const Loading = () => (
             <Placeholder.Line />
         </Placeholder.Paragraph>
     </Placeholder>
-)
+);
 
 export { Loading };

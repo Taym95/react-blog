@@ -8,23 +8,21 @@ import { ApplicationState, PostType } from '../types';
 import { MyModal } from '../components';
 
 interface IProps {
-    posts: PostType[]
+    posts: PostType[];
 }
 
 const PostListContainers: React.FC<IProps> = ({ posts }) => {
     useFetching(loadPostsAction);
-    const postsItems = posts.map((post) => <PostCard key={post.id} {...post} />);
+    const postsItems = posts.map(post => <PostCard key={post.id} {...post} />);
     return (
         <>
             <MyHeader />
             <MyModal />
-            <Item.Group divided>
-                {posts.length === 0 ? <Loading /> : postsItems}
-            </Item.Group>
+            <Item.Group divided>{posts.length === 0 ? <Loading /> : postsItems}</Item.Group>
             <MyModal />
         </>
-    )
-}
+    );
+};
 
 const mapStateToProps = (state: ApplicationState) => state.posts;
 

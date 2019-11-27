@@ -1,19 +1,6 @@
-
 import { put, take, all, fork } from 'redux-saga/effects';
-import {
-    loadPostsAction,
-    postsLoadedAction,
-    DELETE_POST,
-    LOAD_POSTS,
-    ADD_POST,
-    UPDATE_POST
-} from '../actions';
-import {
-    getPostList,
-    deletePost,
-    updatePost
-    , addPost
-} from '../api';
+import { loadPostsAction, postsLoadedAction, DELETE_POST, LOAD_POSTS, ADD_POST, UPDATE_POST } from '../actions';
+import { getPostList, deletePost, updatePost, addPost } from '../api';
 
 function* updatePostSaga() {
     while (true) {
@@ -47,12 +34,6 @@ function* deletePostSaga() {
     }
 }
 
-
 export function* mySaga() {
-    yield all([
-        fork(getPostSaga),
-        fork(deletePostSaga),
-        fork(addPostSaga),
-        fork(updatePostSaga)
-    ])
+    yield all([fork(getPostSaga), fork(deletePostSaga), fork(addPostSaga), fork(updatePostSaga)]);
 }
