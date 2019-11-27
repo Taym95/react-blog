@@ -4,7 +4,7 @@
 
 ### Back-End
 
-clone (https://github.com/Taym95/blog-backend)[blog-backend]
+clone [blog-backend](https://github.com/Taym95/blog-backend)
 
 `cd blog-backend && yarn && yarn dev`
 
