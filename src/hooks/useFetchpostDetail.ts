@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { getPost } from '../api'
 
 const useFetchPostDetail = (postId: string | undefined) => {
-    const [postDetail, setpostDetail] = useState({
-        "id": 0xFFFF,
+    const [postDetail, setPostDetail] = useState({
+        "id": "0xFFFF",
         "title": "",
         "datePosted": "",
         "categories": [],
@@ -13,7 +13,7 @@ const useFetchPostDetail = (postId: string | undefined) => {
 
     useEffect(() => {
         getPost(postId).then(postDetail => {
-            setpostDetail(postDetail);
+            setPostDetail(postDetail);
         }).catch(error => {
             setIsError(true);
         });

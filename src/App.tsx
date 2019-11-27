@@ -26,7 +26,7 @@ const Routes = () => {
 }
 const AppContainer = () => (
   <Container>
-    <Routes />
+    <Routes />  
   </Container>
 )
 

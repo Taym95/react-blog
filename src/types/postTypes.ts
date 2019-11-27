@@ -11,7 +11,7 @@ export interface Category {
 }
 
 export interface PostType {
-    id: number
+    id: string
     title: string
     content: string
     datePosted: string

@@ -5,6 +5,7 @@ import { PostCard, MyHeader, Loading } from '../components';
 import { useFetching } from '../hooks';
 import { loadPostsAction } from '../actions';
 import { ApplicationState, PostType } from '../types';
+import { MyModal } from '../components';
 
 interface IProps {
     posts: PostType[]
@@ -16,9 +17,11 @@ const PostListContainers: React.FC<IProps> = ({ posts }) => {
     return (
         <>
             <MyHeader />
+            <MyModal />
             <Item.Group divided>
                 {posts.length === 0 ? <Loading /> : postsItems}
             </Item.Group>
+            <MyModal />
         </>
     )
 }

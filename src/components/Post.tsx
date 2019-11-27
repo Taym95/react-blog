@@ -1,8 +1,9 @@
 import React from 'react';
 import { Card, Image } from 'semantic-ui-react'
 import { PostType } from '../types';
+import { MyModal } from '../components';
 
-const Post = (post: PostType | null) => {
+const Post = (post: PostType) => {
     return (
         <Card fluid>
             {/*I am using a random image for all post*/}
@@ -14,6 +15,7 @@ const Post = (post: PostType | null) => {
                     {post ? post.content : ""}
                 </Card.Description>
             </Card.Content>
+            <MyModal post={post} />
         </Card>
     )
 }
