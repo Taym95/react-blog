@@ -15,7 +15,7 @@ interface Props {
 const PostListContainers: React.FC<Props> = ({ posts, categorizedPosts }) => {
   useFetching(loadPostsAction);
   const postsItems =
-    categorizedPosts.length == 0
+    categorizedPosts.length === 0
       ? posts.map(post => <PostCard key={post.id} {...post} />)
       : categorizedPosts.map(post => <PostCard key={post.id} {...post} />);
   return (
