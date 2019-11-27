@@ -4,11 +4,11 @@ import React, { Suspense } from 'react';
 // With Suspense you can make that lazy loading be smart and know to render a fallback component (or JSX element)
 // whilst waiting for that slowly loading chunk for the lazy component.
 function withSuspense<T>(WrappedComponent: React.ComponentType<T>) {
-    return (props: T) => (
-        <Suspense fallback={<div>Loading...</div>}>
-            <WrappedComponent {...props} />
-        </Suspense>
-    );
+  return (props: T) => (
+    <Suspense fallback={<div>Loading...</div>}>
+      <WrappedComponent {...props} />
+    </Suspense>
+  );
 }
 
 export { withSuspense };
