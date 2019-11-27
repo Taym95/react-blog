@@ -3,12 +3,12 @@ import { Button, Modal } from 'semantic-ui-react';
 import { PostForm } from '../containers/PostForm';
 import { PostType } from '../types';
 
-interface IProps {
+interface Props {
     post?: PostType;
     loadPost?: Function;
 }
 
-const MyModal: React.FC<IProps> = ({ post, loadPost }) => {
+const MyModal: React.FC<Props> = ({ post, loadPost }) => {
     const [isOpen, setIsOpen] = useState(false);
     const closeModal = () => {
         setIsOpen(false);

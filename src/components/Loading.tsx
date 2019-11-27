@@ -2,7 +2,7 @@ import React from 'react';
 import { Placeholder } from 'semantic-ui-react';
 
 const Loading = () => (
-    <Placeholder>
+    <Placeholder data-testid="loading" >
         <Placeholder.Header image>
             <Placeholder.Line />
             <Placeholder.Line />

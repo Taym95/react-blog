@@ -7,19 +7,20 @@ import { loadPostsAction } from '../actions';
 import { ApplicationState, PostType } from '../types';
 import { MyModal } from '../components';
 
-interface IProps {
+interface Props {
     posts: PostType[];
 }
 
-const PostListContainers: React.FC<IProps> = ({ posts }) => {
+const PostListContainers: React.FC<Props> = ({ posts }) => {
     useFetching(loadPostsAction);
     const postsItems = posts.map(post => <PostCard key={post.id} {...post} />);
     return (
         <>
             <MyHeader />
             <MyModal />
-            <Item.Group divided>{posts.length === 0 ? <Loading /> : postsItems}</Item.Group>
-            <MyModal />
+            <Item.Group divided>
+                {posts.length === 0 ? <Loading /> : postsItems}
+            </Item.Group>
         </>
     );
 };

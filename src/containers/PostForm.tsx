@@ -8,12 +8,12 @@ const getRandomPostId = () => {
     return (Math.floor(Math.random() * 100) + 1).toString();
 };
 
-interface IProps {
+interface Props {
     closeModal: Function;
     post?: PostType;
 }
 
-const PostForm: React.FC<IProps> = ({ closeModal, post }) => {
+const PostForm: React.FC<Props> = ({ closeModal, post }) => {
     const today = new Date();
     const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     const time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();

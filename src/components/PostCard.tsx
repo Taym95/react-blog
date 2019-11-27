@@ -15,7 +15,7 @@ const MemoizedPostCard = (post: PostType) => {
 
     const postLink = `/post/${post.id}`;
     return (
-        <Item>
+        <Item data-testid="post-list">
             {/*I am using a random image for all post*/}
             <Item.Image src="https://www.blogtyrant.com/wp-content/uploads/2017/02/how-to-write-a-good-blog-post.png" />
             <Item.Content>
@@ -29,8 +29,7 @@ const MemoizedPostCard = (post: PostType) => {
                 <Item.Extra>
                     <Button primary floated="right">
                         <MyLink to={postLink}>
-                            {' '}
-                            Read more <Icon name="angle right" />
+                            Read more
                         </MyLink>
                     </Button>
                 </Item.Extra>
