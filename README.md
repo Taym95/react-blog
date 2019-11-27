@@ -4,12 +4,14 @@
 
 ### Back-End
 
+clone (blog-backend)[https://github.com/Taym95/blog-backend]
+
 `cd blog-backend && yarn && yarn dev`
 
 ### Front-End
 
-`cd blog-frontend && yarn && yarn start`
+`cd react-blog && yarn && yarn start`
 
 ### Front-End Test
 
-`cd blog-frontend && yarn && yarn test`
+`cd react-blog && yarn && yarn test`
