@@ -11,4 +11,6 @@ export {
     ADD_POST,
     DELETE_POST,
     UPDATE_POST,
+    FAIL_LOADING_POSTS,
+    FAIL_DELETE_POST
 } from './postActions';

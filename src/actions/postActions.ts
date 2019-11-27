@@ -7,6 +7,8 @@ export const POSTS_LOADED = 'POSTS_LOADED';
 export const ADD_POST = 'ADD_POST';
 export const UPDATE_POST = 'UPDATE_POST';
 export const DELETE_POST = 'DELETE_POST';
+export const FAIL_LOADING_POSTS = 'FAIL_LOADING_POSTS';
+export const FAIL_DELETE_POST = 'FAIL_DELETE_POST';
 
 export const loadPostsAction = () => ({ type: LOAD_POSTS });
 
