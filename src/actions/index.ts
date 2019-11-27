@@ -5,6 +5,7 @@ export {
     addPostAction,
     updatePostAction,
     deletePostAction,
+    loadCategoryAction,
     LOAD_POSTS,
     POSTS_LOADED,
     LOAD_POST,
@@ -12,5 +13,6 @@ export {
     DELETE_POST,
     UPDATE_POST,
     FAIL_LOADING_POSTS,
-    FAIL_DELETE_POST
+    FAIL_DELETE_POST,
+    LOAD_CATEGORY
 } from './postActions';

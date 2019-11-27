@@ -9,6 +9,7 @@ export const UPDATE_POST = 'UPDATE_POST';
 export const DELETE_POST = 'DELETE_POST';
 export const FAIL_LOADING_POSTS = 'FAIL_LOADING_POSTS';
 export const FAIL_DELETE_POST = 'FAIL_DELETE_POST';
+export const LOAD_CATEGORY = 'LOAD_CATEGORY';
 
 export const loadPostsAction = () => ({ type: LOAD_POSTS });
 
@@ -21,3 +22,5 @@ export const addPostAction = (post: PostType) => ({ type: ADD_POST, payload: pos
 export const updatePostAction = (post: PostType) => ({ type: UPDATE_POST, payload: post });
 
 export const deletePostAction = (id: string) => ({ type: DELETE_POST, payload: id });
+
+export const loadCategoryAction = (category: string) => ({ type: LOAD_CATEGORY, payload: category });

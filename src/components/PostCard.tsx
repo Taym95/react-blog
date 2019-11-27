@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { useDispatch } from 'react-redux';
-import { Button, Icon, Item } from 'semantic-ui-react';
+import { Button, Item } from 'semantic-ui-react';
 import { MyLink } from './MyLink';
 import { PostType } from '../types';
 import { deletePostAction } from '../actions';

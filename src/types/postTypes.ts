@@ -14,7 +14,8 @@ export interface PostType {
 
 export interface PostState {
     posts: PostType[];
-    loading: boolean;
+    categories: string[];
+    categorizedPosts: PostType[];
 }
 
 export interface ApplicationState {
