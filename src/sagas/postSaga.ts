@@ -1,4 +1,4 @@
-import { put, take, all, fork, call, takeLatest } from "redux-saga/effects";
+import { put, take, all, fork, call, takeEvery } from "redux-saga/effects";
 import {
   loadPostsAction,
   postsLoadedAction,
@@ -27,17 +27,20 @@ export function* addPostSaga() {
   }
 }
 
-export function* getPostsSaga(fakeGetPosts?: any) {
-  // PS: we can use takeLatest for more cancelation w predectibality
+export function* fetchPosts(fakeGetPosts: any) {
   try {
     const postList = yield fakeGetPosts
       ? call(fakeGetPosts)
       : call(getPostList);
-    yield takeLatest(LOAD_POSTS, postList);
     yield put(postsLoadedAction(postList));
   } catch (e) {
     yield put({ type: FAIL_LOADING_POSTS, error: e });
   }
+}
+
+export function* getPostsSaga(fakeGetPosts?: any) {
+  // PS: we can use takeEvery for more cancelation w predectibality
+  yield takeEvery(LOAD_POSTS, fetchPosts, fakeGetPosts);
 }
 
 export function* deletePostSaga(fakeDeletPost?: any) {
